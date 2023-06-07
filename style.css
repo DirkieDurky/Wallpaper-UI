@@ -9,3 +9,7 @@
 .text-break {
     white-space: break-spaces
 }
+
+.mw-40 {
+    max-width: 40em;
+}
