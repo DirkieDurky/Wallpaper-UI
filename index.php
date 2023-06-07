@@ -48,7 +48,7 @@ if (!isset($_GET['mode'])) header("Location: ./?mode=default")
                 case "default":
             ?>
                     <span class="mt-4 w-50 mw-40">Download the wallpaper from dirkdev.com. The image can be changed at any time at https://wallpaper.dirkdev.com/manage/{username}</span>
-                    <input required autocomplete="off" id="name-input-field" class="input-group-text form-control p-2 w-50 mt-4 mw-40" type="text" name="username" placeholder="Username">
+                    <input required autocomplete="off" id="name-input-field" class="input-group-text form-control text-start p-2 w-50 mt-4 mw-40" type="text" name="username" placeholder="Username">
                     <span id="helpMessage" class="text-success">The url of the image will be
                         https://wallpaper.dirkdev.com/wallpapers/{username}.png</span>
                 <?php
@@ -56,7 +56,7 @@ if (!isset($_GET['mode'])) header("Location: ./?mode=default")
                 case "url":
                 ?>
                     <span class="mt-4 w-50 mw-40">Download the wallpaper from a url of your own. Link to an image you found on the internet or use a link of which you can change the image contents.</span>
-                    <input required autocomplete="off" id="url-input-field" class="input-group-text form-control p-2 w-50 mt-4 mw-40" type="text" name="url" placeholder="URL">
+                    <input required autocomplete="off" id="url-input-field" class="input-group-text form-control text-start p-2 w-50 mt-4 mw-40" type="text" name="url" placeholder="URL">
                 <?php
                     break;
                 case "image":
@@ -72,6 +72,10 @@ if (!isset($_GET['mode'])) header("Location: ./?mode=default")
                     break;
             }
             ?>
+            <div class="mt-4">
+                <input type="checkbox" name="addToStartup" id="addToStartup" class="form-check-input shadow-none">
+                <label for="addToStartup" class=" form-check-label user-select-none">Start tool on startup</label>
+            </div>
             <input class=" input-group-submit p-2 w-50 mt-4 cursor-pointer mw-40" type="submit" name="submit" value="Download">
         </form>
     <?php
