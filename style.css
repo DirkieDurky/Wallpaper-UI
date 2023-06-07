@@ -1,0 +1,11 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.btn:hover {
+    filter: brightness(85%);
+}
+
+.text-break {
+    white-space: break-spaces
+}
