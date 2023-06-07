@@ -35,8 +35,8 @@ if (!isset($_GET['mode'])) header("Location: ./?mode=default")
     ?>
         <h1 class="text-center mt-4 mb-5">Download NuggetInc's Wallpaper tool</h1>
 
-        <form class="d-flex flex-column text-center align-items-center">
-            <div class="btn-group w-50 mw-40" role="group" aria-label="Mode selection">
+        <form class="d-flex flex-column text-center align-items-center w-50 mw-40 mx-auto">
+            <div class="btn-group w-100" role="group" aria-label="Mode selection">
                 <a type="button" href="./?mode=default" class="btn btn-primary shadow-none <?= $_GET['mode'] == "default" ? "bg-primary text-white" : "bg-white text-primary" ?>">Default</a>
                 <a type="button" href="./?mode=url" class="btn btn-primary shadow-none <?= $_GET['mode'] == "url" ? "bg-primary text-white" : "bg-white text-primary" ?>">URL</a>
                 <a type="button" href="./?mode=image" class="btn btn-primary shadow-none <?= $_GET['mode'] == "image" ? "bg-primary text-white" : "bg-white text-primary" ?>">Image</a>
@@ -47,27 +47,27 @@ if (!isset($_GET['mode'])) header("Location: ./?mode=default")
             switch ($_GET['mode']) {
                 case "default":
             ?>
-                    <span class="mt-4 w-50 mw-40">Download the wallpaper from dirkdev.com. The image can be changed at any time at https://wallpaper.dirkdev.com/manage/{username}</span>
-                    <input required autocomplete="off" id="name-input-field" class="input-group-text form-control text-start p-2 w-50 mt-4 mw-40" type="text" name="username" placeholder="Username">
-                    <span id="helpMessage" class="text-success">The url of the image will be
+                    <span class="mt-4">Download the wallpaper from dirkdev.com. The image can be changed at any time at https://wallpaper.dirkdev.com/manage/{username}</span>
+                    <input required autocomplete="off" id="name-input-field" class="input-group-text form-control text-start p-2 mt-4" type="text" name="username" placeholder="Username">
+                    <span id="helpMessage" class="text-success w-100 text-wrap">The url of the image will be
                         https://wallpaper.dirkdev.com/wallpapers/{username}.png</span>
                 <?php
                     break;
                 case "url":
                 ?>
-                    <span class="mt-4 w-50 mw-40">Download the wallpaper from a url of your own. Link to an image you found on the internet or use a link of which you can change the image contents.</span>
-                    <input required autocomplete="off" id="url-input-field" class="input-group-text form-control text-start p-2 w-50 mt-4 mw-40" type="text" name="url" placeholder="URL">
+                    <span class="mt-4">Download the wallpaper from a url of your own. Link to an image you found on the internet or use a link of which you can change the image contents.</span>
+                    <input required autocomplete="off" id="url-input-field" class="input-group-text form-control text-start p-2 mt-4" type="text" name="url" placeholder="URL">
                 <?php
                     break;
                 case "image":
                 ?>
-                    <span class="mt-4 w-50 mw-40">Pick an image. Because this image doesn't have to be downloaded, this will work even on devices without an internet connection</span>
-                    <input type="file" id="wallpaper" name="wallpaper" class="mt-4 mw-40">
+                    <span class="mt-4">Pick an image. Because this image doesn't have to be downloaded, this will work even on devices without an internet connection</span>
+                    <input type="file" id="wallpaper" name="wallpaper" class="mt-4">
                 <?php
                     break;
                 case "xkcd":
                 ?>
-                    <span class="mt-4 w-50 mw-40">Every time the user starts their computer or changes their background, a random comic from https://xkcd.com will be downloaded and set as desktop wallpaper</span>
+                    <span class="mt-4">Every time the user starts their computer or changes their background, a random comic from https://xkcd.com will be downloaded and set as desktop wallpaper</span>
             <?php
                     break;
             }
@@ -76,7 +76,7 @@ if (!isset($_GET['mode'])) header("Location: ./?mode=default")
                 <input type="checkbox" name="addToStartup" id="addToStartup" class="form-check-input shadow-none">
                 <label for="addToStartup" class=" form-check-label user-select-none">Start tool on startup</label>
             </div>
-            <input class=" input-group-submit p-2 w-50 mt-4 cursor-pointer mw-40" type="submit" name="submit" value="Download">
+            <input class=" input-group-submit p-2 mt-4 cursor-pointer w-50" type="submit" name="submit" value="Download">
         </form>
     <?php
     }
